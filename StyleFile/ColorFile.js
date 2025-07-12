@@ -1,8 +1,8 @@
-import React, {useState, createRef, useEffect} from 'react';
+import React, { useState, createRef, useEffect } from 'react';
 const Colors = {
   white: '#ffffff',
   black: '#000000',
-  blue: '#0058A0',
+  blue: '#00AFFF',
   splashColor: '#0058A0',
   yellowbutton: '#F69321',
   Button_color: '#F69321',

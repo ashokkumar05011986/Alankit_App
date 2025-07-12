@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Colors from '../StyleFile/ColorFile.js';
 import FontFamily from './Fontfamily.js';
 
@@ -10,7 +10,13 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.blue,
   },
-
+  imageBackground: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    height: 250,
+  },
   p: {
     color: '#000000',
     fontSize: 14,
@@ -57,7 +63,7 @@ export default StyleSheet.create({
     marginBottom: 10,
     fontFamily: FontFamily.fontFamily_800_value,
   },
-  img: {alignSelf: 'center', width: '50%', height: 200, margin: 20},
+  img: { alignSelf: 'center', width: '50%', height: 200, margin: 20 },
   li: {
     color: '#000000',
     fontSize: 14,
@@ -867,7 +873,7 @@ export default StyleSheet.create({
     shadowColor: '#000',
     borderColor: '#000000',
     borderWidth: 1,
-    shadowOffset: {width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,

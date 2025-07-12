@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import StatusBarSplash from './Components/StatusBarSplash';
 import FontFamily from '../StyleFile/Fontfamily';
+import Colors from '../StyleFile/ColorFile';
 import {
   useSafeAreaInsets,
   SafeAreaProvider,
@@ -23,7 +24,7 @@ const SplashScreen = ({ navigation }) => {
     const user_id = await AsyncStorage.getItem('user_id');
     console.log('user_id----', user_id);
     if (user_id === null) {
-      // navigation.replace("LoginPage");
+      navigation.replace('LoginPage');
     } else {
       //navigation.replace("Homepage");
     }
@@ -45,30 +46,25 @@ const SplashScreen = ({ navigation }) => {
           flex: 1,
           paddingBottom: insets.bottom,
           paddingTop: insets.top,
-          backgroundColor: '#00AFFF',
+          backgroundColor: Colors.blue,
+          alignContent: 'center',
+          justifyContent: 'center',
+          width: '100%',
         }}
       >
-        <View
-          style={{
-            width: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <View style={{ alignItems: 'center' }}>
           <Image
             source={require('../Image/alankit_logo.png')}
             style={{ width: 250, height: 65, resizeMode: 'contain' }}
           />
           <Text
             style={{
-              fontSize: 30,
+              fontSize: 16,
               color: '#FFFFFF',
-              fontFamily: FontFamily.fontFamily_900_value,
-              textAlign: 'left',
-              marginLeft: 10,
+              fontFamily: FontFamily.fontFamily_value,
             }}
           >
-            ConsularMetrics – Alankit
+            ConsularMetrics - Alankit
           </Text>
         </View>
       </SafeAreaView>
