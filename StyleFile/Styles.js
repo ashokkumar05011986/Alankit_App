@@ -440,9 +440,20 @@ export default StyleSheet.create({
   },
   buttonTextStyle123: {
     fontFamily: FontFamily.fontFamily_600_value,
-    color: Colors.black,
-    fontSize: 20,
-    lineHeight: 28,
+    color: Colors.white,
+    fontSize: 15,
+    lineHeight: 20,
+  },
+  arrorstyle: {
+    width: 40,
+    height: 40,
+    borderRadius:
+      Math.round(
+        Dimensions.get('window').width + Dimensions.get('window').height,
+      ) / 2,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   guestbutton: {
     flexDirection: 'row',

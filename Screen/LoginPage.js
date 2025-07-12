@@ -84,14 +84,39 @@ const LoginPage = ({ navigation }) => {
               >
                 ConsularMetrics – Alankit
               </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  marginTop: 10,
+                  width: '100%',
+                  justifyContent: 'center',
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: '10%',
+                    height: 5,
+                    backgroundColor: Colors.blue,
+                  }}
+                ></View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: '10%',
+                    height: 5,
+                    backgroundColor: Colors.black,
+                  }}
+                ></View>
+              </View>
             </View>
           </ImageBackground>
           <View
             style={{
               width: '100%',
-              paddingLeft: 15,
-              paddingRight: 15,
-              marginTop: 50,
+              justifyContent: 'center',
+              paddingHorizontal: 30,
+              marginTop: 30,
             }}
           >
             <View
@@ -252,14 +277,14 @@ const LoginPage = ({ navigation }) => {
                 title="Sign In"
                 style={{
                   flexDirection: 'row',
-                  backgroundColor: Colors.Button_color,
+                  backgroundColor: Colors.blue,
                   width: '100%',
                   height: 50,
                   justifyContent: 'center',
-                  alignItems: 'center',
+                  // alignItems: 'center',
                   marginTop: 10,
                   marginBottom: 10,
-                  borderRadius: 5,
+                  borderRadius: 40,
                   borderWidth: 0,
                 }}
                 customClick={() => getLoginclick()}
