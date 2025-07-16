@@ -16,6 +16,9 @@ import styles from '../StyleFile/Styles.js';
 import Colors from '../StyleFile/ColorFile.js';
 import My_Button from './Components/My_Button';
 import Entypo from 'react-native-vector-icons/Entypo';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import AwesomeAlert_model from './Components/AwesomeAlert_model.js';
 import {
   useSafeAreaInsets,
   SafeAreaProvider,
@@ -32,11 +35,35 @@ const LoginPage = ({ navigation }) => {
   const ref_to_email = useRef(null);
   const ref_to_password = useRef(null);
   const [passwordEncryption, setpasswordEncryption] = useState(true);
-  const Forgotclick = () => {};
-  const getLoginclick = () => {};
+  const [AwesomeAlert_show, setAwesomeAlert_show] = useState(false);
+  const [AwesomeAlert_title, setAwesomeAlert_title] = useState('');
+  const [AwesomeAlert_Message, setAwesomeAlert_Message] = useState('');
+
+  const Forgotclick = () => {
+    setAwesomeAlert_show(true);
+    setAwesomeAlert_title('working in progress!');
+    setAwesomeAlert_Message('working in progress!');
+  };
+  const getLoginclick = () => {
+    setAwesomeAlert_show(true);
+    setAwesomeAlert_title('working in progress!');
+    setAwesomeAlert_Message('working in progress!');
+  };
+  const customClickonCancelPressed = () => {
+    setAwesomeAlert_show(false);
+  };
   return (
     <>
       <StatusBarSplash />
+      <AwesomeAlert_model
+        show={AwesomeAlert_show}
+        title={AwesomeAlert_title}
+        message={AwesomeAlert_Message}
+        showCancelButton={true}
+        showConfirmButton={false}
+        customClickonCancelPressed={() => customClickonCancelPressed()}
+        customClickonConfirmPressed={() => customClickonCancelPressed()}
+      />
       <View
         style={{
           flex: 1,
@@ -82,7 +109,7 @@ const LoginPage = ({ navigation }) => {
                   marginLeft: 10,
                 }}
               >
-                ConsularMetrics – Alankit
+                ConsularMetrics - Alankit
               </Text>
               <View
                 style={{
@@ -115,7 +142,7 @@ const LoginPage = ({ navigation }) => {
             style={{
               width: '100%',
               justifyContent: 'center',
-              paddingHorizontal: 30,
+              paddingHorizontal: 20,
               marginTop: 30,
             }}
           >
@@ -168,31 +195,42 @@ const LoginPage = ({ navigation }) => {
             >
               <View
                 style={{
-                  width: '26%',
+                  flexDirection: 'row',
+                  width: '15%',
                   justifyContent: 'center',
+                  alignItems: 'center',
                   paddingLeft: 10,
                 }}
               >
+                <Fontisto
+                  name="email"
+                  size={30}
+                  color="#000000"
+                  style={{ marginHorizontal: 5 }}
+                />
                 <Text
                   style={{
                     color: Colors.black,
+                    display: 'none',
                     fontFamily: FontFamily.fontFamily_300_value,
+                    marginHorizontal: 5,
                     fontSize: 16,
                   }}
                 >
                   Email
                 </Text>
               </View>
-              <View style={{ width: '74%' }}>
+              <View style={{ width: '85%' }}>
                 <TextInput
                   onChangeText={UserEmail => setUserEmail(UserEmail)}
-                  placeholder="Enter Your Email *" //dummy@abc.com
-                  placeholderTextColor="#CCCCCC"
+                  placeholder="Email *" //dummy@abc.com
+                  placeholderTextColor="#000000"
                   autoCapitalize="none"
                   // keyboardType="numeric"
                   style={{
                     fontFamily: FontFamily.fontFamily_300_value,
                     fontSize: 16,
+                    paddingLeft: 20,
                   }}
                   onSubmitEditing={() => {
                     ref_to_password.current.focus();
@@ -218,26 +256,36 @@ const LoginPage = ({ navigation }) => {
             >
               <View
                 style={{
-                  width: '26%',
+                  width: '15%',
+                  flexDirection: 'row',
                   justifyContent: 'center',
+                  alignItems: 'center',
                   paddingLeft: 10,
                 }}
               >
+                <AntDesign
+                  name="lock"
+                  size={30}
+                  color="#000000"
+                  style={{ marginHorizontal: 5 }}
+                />
                 <Text
                   style={{
                     color: Colors.black,
                     fontFamily: FontFamily.fontFamily_300_value,
+                    marginHorizontal: 5,
+                    display: 'none',
                     fontSize: 16,
                   }}
                 >
                   Password
                 </Text>
               </View>
-              <View style={{ width: '60%' }}>
+              <View style={{ width: '70%' }}>
                 <TextInput
                   onChangeText={UserPassword => setUserPassword(UserPassword)}
-                  placeholder="Enter your password *" //dummy@abc.com
-                  placeholderTextColor="#CCCCCC"
+                  placeholder="Password *" //dummy@abc.com
+                  placeholderTextColor="#000000"
                   autoCapitalize="none"
                   secureTextEntry={passwordEncryption}
                   style={{
@@ -254,7 +302,7 @@ const LoginPage = ({ navigation }) => {
               </View>
               <View
                 style={{
-                  width: '14%',
+                  width: '15%',
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}

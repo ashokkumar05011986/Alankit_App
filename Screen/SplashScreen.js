@@ -33,7 +33,7 @@ const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       splacelogin(); // Replace "Login" with your target screen name
-    }, 4000);
+    }, 1000);
 
     // Cleanup the timeout to avoid memory leaks
     return () => clearTimeout(timer);
